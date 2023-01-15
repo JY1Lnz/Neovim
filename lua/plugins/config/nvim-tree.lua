@@ -1,11 +1,7 @@
-local status, nvim_tree = pcall(require, "nvim-tree") 
-if not status then
-  vim.nofity("not found nvim-tree")
-  return
-end
+local nvim_tree = load_plugin("nvim-tree")
 
 -- 列表操作快捷键
-local list_keys = require('keybindings').nvimTreeList
+local list_keys = require('keybinds').nvimTreeList
 nvim_tree.setup({
     -- 不显示 git 状态图标
     git = {
@@ -51,11 +47,7 @@ nvim_tree.setup({
     -- wsl install -g wsl-open
     -- https://github.com/4U6U57/wsl-open/
     system_open = {
-        -- cmd = 'wsl-open', -- mac 直接设置为 open
+      cmd = 'wsl-open', -- mac 直接设置为 open
     },
 })
--- 自动关闭
-vim.cmd([[
-  autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
-]])
 
