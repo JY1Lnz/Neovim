@@ -5,3 +5,5 @@ require ('plugins')
 require ('colorscheme')
 
 require ('keybinds')
+
+require ('lsp')
