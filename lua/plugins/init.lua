@@ -4,6 +4,7 @@ packer.startup(
     use("wbthomason/packer.nvim") -- update plugin
 
     use("navarasu/onedark.nvim") -- scheme
+    use("tanvirtin/monokai.nvim")
 
     use({
       "kyazdani42/nvim-tree.lua",
